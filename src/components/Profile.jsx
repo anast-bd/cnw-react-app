@@ -1,24 +1,29 @@
 import React from 'react';
+import s from './Profile.module.css';
 
 const Profile = () => {
 	return (
-		<div className='content'>
-			<div>
-			<img src='https://images.unsplash.com/photo-1589911830828-964ec79fa47b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'/>
-			</div>
-			<div>
-				ava + desctiption
-			</div>
-			<div>
-				My posts
-				<div>
-					New post
+		<div className={s.content}>
+			
+			<div className={s.profileHeader}>
+				<div className={s.profileContainer}>
+					<div className={s.profileCover}></div>
+					<div className={s.profileInfo}></div>
 				</div>
-				<div>
-					Post 1
-				</div>
-				<div>
-					Post 2
+			</div>
+			
+			<div className={s.postsContainer}>
+				<div className={s.posts}>
+					My posts
+					<div className={s.item}>
+						New post
+					</div>
+					<div className={s.item}>
+						Post 1
+					</div>
+					<div className={s.item}>
+						Post 2
+					</div>
 				</div>
 			</div>
 		</div>
