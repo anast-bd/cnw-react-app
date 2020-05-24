@@ -11,20 +11,6 @@ body {
 	overflow: hidden;
 }
 
-@media (min-width: 700px) {
-	.app-wrapper {
-		width: 100%;
-		display: grid;
-		grid-template-areas:
-			'h h h'
-			'n ph f'
-			'n pc f';
-		grid-template-rows: 70px 20em 1fr;
-		grid-template-columns: 2fr 8fr 2fr;	
-		grid-gap: 20px;
-	}
-}
-
 
 
 
