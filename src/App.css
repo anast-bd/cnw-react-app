@@ -10,6 +10,14 @@ body {
     color: #777d74;
 }
 
+.app-wrapper-content {
+	overflow: hidden;
+    padding: 85px 15px 0;
+    min-height: 100vh;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
 
 
 

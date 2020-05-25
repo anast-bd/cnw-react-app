@@ -13,5 +13,17 @@
 
 .item {
 	padding: 15px;
+}
+
+.item a {
+	text-decoration: none;
+	color: #777d74;
+}
+
+.item a:hover {
+	color: #05c490;
+}
+
+.item a.active {
 	color: #05c490;
 }
