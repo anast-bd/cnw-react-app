@@ -27,6 +27,7 @@
 }
 
 .cardBody input {
+	width: auto;
 	border: none;
 	margin-left: 20px;
 }
@@ -41,4 +42,18 @@
 
 .cardBody input:focus {
 	outline: none;
+}
+
+.cardBody button {
+	background-color: #05c490;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
 }
