@@ -8,12 +8,62 @@
 	box-sizing: border-box;
 }
 
-.dialog a{
-	padding: 15px;
-	color: #777d74;
-	text-decoration: none;
+
+
+.chatHeader {
+	display: flex;
+	justify-content: center;
+	padding: auto;
 }
 
-.dialog a .active {
-	color: #05c490;
+.chat {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-rows: 40px 1fr 70px;
+}
+
+.chatFooter {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 80px;
+	grid-gap: 10px;
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+.chatFooter textarea {
+	border: none;
+	height: 100%;
+	font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+	padding: 5px;
+}
+
+.chatFooter button {
+	background-color: #05c490;
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.cardFooter textarea::placeholder {
+	font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.cardFooter textarea:focus {
+	outline: none;
 }
