@@ -1,15 +1,11 @@
 .dialogs {
 	display: grid;
-	grid-template-columns: 2fr 10fr;
+	grid-template-columns: 3fr 10fr;
 	width: 100%;
 	background-color: white;
 	border-radius: 5px;
 	padding: 20px;
 	box-sizing: border-box;
-}
-
-.dialogsItems {
-
 }
 
 .dialog a{
@@ -18,14 +14,6 @@
 	text-decoration: none;
 }
 
-.dialog .active {
+.dialog a .active {
 	color: #05c490;
-}
-
-.messages {
-	
-}
-
-.message {
-	
 }
