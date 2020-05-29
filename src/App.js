@@ -12,7 +12,7 @@ import Settings from './components/Settings/Settings';
 function App(props) {
 	
 	let DialogsComponent = () => <Dialogs state={props.state.dialogsPage} />;
-	let ProfileComponent = () => <Profile state={props.state.profilePage} addPost={props.addPost}/>;
+	let ProfileComponent ;
 	let MusicComponent = () => <Music />;
 	let NewsComponent = () => <News />;
 	let SettingsComponent = () => <Settings />;
@@ -23,8 +23,14 @@ function App(props) {
 				<Header />
 				<Sidebar />
 				<div class='app-wrapper-content'>
-					<Route path='/profile' component={ ProfileComponent }/>
-					<Route exact path='/dialogs' component={ DialogsComponent } />
+					<Route path='/profile' 
+						render={ () => <Profile 
+							profilePage={props.state.profilePage} 
+							addPost={props.addPost}
+							updageNewPostText={props.updageNewPostText} 
+						/> }
+					/>
+					<Route exact path='/dialogs' render={ DialogsComponent } />
 					<Route path='/music' component={ MusicComponent } />
 					<Route path='/news' component={ NewsComponent } />
 					<Route path='/settings' component={ SettingsComponent } />

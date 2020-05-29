@@ -1,11 +1,27 @@
 import {rerenderEntireTree} from "../render";
 
+export let addPost = (postMessage) => {
+	let newPost ={
+		id: 5,
+		message: postMessage,
+		likesCount: 0
+	};
+	state.profilePage.posts.unshift(newPost);
+	rerenderEntireTree(state);
+} 
+
+export let updageNewPostText = (newText) => {
+	state.profilePage.newPostText = newText;
+	rerenderEntireTree(state);
+} 
+
 let state = {
 	profilePage: {
 		posts: [
 		{id: 1, message: 'Ribbit! Ribbit ribbit.', likesCount: '800'},
 		{id: 2, message: 'Ribbit ribbit, ribbit. Ribbit?.', likesCount: '1250'},
-		{id: 3, message: 'Ribbit ribbit rib-ribbit ribbit!', likesCount: '958'}]
+		{id: 3, message: 'Ribbit ribbit rib-ribbit ribbit!', likesCount: '958'}],
+		newPostText: 'newpostpost',
 	},
 	dialogsPage: {
 		dialogs: [
@@ -20,18 +36,9 @@ let state = {
 	{id: 3, message:"THE Queen. She's just an icon of style."},
 	{id: 4, message:'Yaaas, hail the Queen!'},
 	{id: 5, message:'God '} ]
-	}	
-}
-
-export let addPost = (postMessage) => {
-	let newPost ={
-		id: 5,
-		message: postMessage,
-		likesCount: 0
-	};
-	
-	state.profilePage.posts.push(newPost);
-	rerenderEntireTree(state);
+	},
+	addPost,
+	updageNewPostText
 } 
 
 export default state;
