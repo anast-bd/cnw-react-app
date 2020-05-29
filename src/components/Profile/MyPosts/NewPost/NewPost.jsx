@@ -6,9 +6,7 @@ const NewPost = (props) => {
 	let newPostElement = React.createRef();
 	
 	let addPost = () => {
-		let postMessage = newPostElement.current.value;
 		props.addPost(postMessage);
-		newPostElement.current.value = '';
 	}
 	
 	let onPostChange = () => {

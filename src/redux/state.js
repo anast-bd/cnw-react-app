@@ -1,12 +1,13 @@
 import {rerenderEntireTree} from "../render";
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
 	let newPost ={
 		id: 5,
-		message: postMessage,
+		message: state.profilePage.newPostText,
 		likesCount: 0
 	};
 	state.profilePage.posts.unshift(newPost);
+	state.profilePage.newPostText = '';
 	rerenderEntireTree(state);
 } 
 
@@ -21,7 +22,7 @@ let state = {
 		{id: 1, message: 'Ribbit! Ribbit ribbit.', likesCount: '800'},
 		{id: 2, message: 'Ribbit ribbit, ribbit. Ribbit?.', likesCount: '1250'},
 		{id: 3, message: 'Ribbit ribbit rib-ribbit ribbit!', likesCount: '958'}],
-		newPostText: 'newpostpost',
+		newPostText: '',
 	},
 	dialogsPage: {
 		dialogs: [
@@ -40,5 +41,7 @@ let state = {
 	addPost,
 	updageNewPostText
 } 
+
+window.state = state;
 
 export default state;
