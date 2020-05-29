@@ -1,13 +1,15 @@
 import React from 'react';
 import s from './NewPost.module.css';
 
-const NewPost = () => {
+const NewPost = (props) => {
 	
 	let newPostElement = React.createRef();
 	
-	let addPost = () => { 
-		let text = newPostElement.current.value;
-		alert(text) }
+	let addPost = () => {
+		let postMessage = newPostElement.current.value;
+		props.addPost(postMessage);
+		newPostElement.current.value = '';
+	}
 	
 	return (
 		<div className={s.newPostContainer}>
