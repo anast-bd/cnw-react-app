@@ -5,13 +5,14 @@ import NewPost from './NewPost/NewPost';
 
 const MyPosts = (props) => {
 	
-	let postsElements = props.posts.map ( p => <Post message={p.message} likesCount={p.likesCount}/>)
+	let postsElements = props.profilePage.posts.map ( p => <Post message={p.message} likesCount={p.likesCount}/>)
 	
 	return (
 		<div className={s.postsContainer}>
-			<NewPost newPostText={props.newPostText} 
+			<NewPost newPostText={props.profilePage.newPostText} 
 					addPost={props.addPost}
-					updageNewPostText={props.updageNewPostText}/>			
+					updateNewPostText={props.updateNewPostText}
+			/>			
 			<hr></hr>	
 			<div className={s.posts}>
 				{ postsElements }

@@ -11,7 +11,7 @@ import Settings from './components/Settings/Settings';
 
 function App(props) {
 	
-	let DialogsComponent = () => <Dialogs state={props.state.dialogsPage} />;
+	let DialogsComponent = () => <Dialogs dialogsPage={props.state.dialogsPage} />;
 	let ProfileComponent ;
 	let MusicComponent = () => <Music />;
 	let NewsComponent = () => <News />;
@@ -25,9 +25,9 @@ function App(props) {
 				<div class='app-wrapper-content'>
 					<Route path='/profile' 
 						render={ () => <Profile 
-							profilePage={props.state.profilePage} 
+							profilePage={props.state.profilePage}
 							addPost={props.addPost}
-							updageNewPostText={props.updageNewPostText} 
+							updateNewPostText={props.updateNewPostText}
 						/> }
 					/>
 					<Route exact path='/dialogs' render={ DialogsComponent } />

@@ -6,8 +6,8 @@ import Message from './Message/Message';
 
 const Dialogs = (props) => {
 
-	let dialogsElements = props.state.dialogs.map (d => <DialogItem name={d.name} id={d.id} image={d.image} />);
-	let messagesElements = props.state.messages.map (m => <Message message={m.message} />);
+	let dialogsElements = props.dialogsPage.dialogs.map (d => <DialogItem name={d.name} id={d.id} image={d.image} />);
+	let messagesElements = props.dialogsPage.messages.map (m => <Message message={m.message} />);
 	
 	let newMessageElement = React.createRef();
 	
@@ -26,7 +26,7 @@ const Dialogs = (props) => {
 			
 			<div className={s.chat}>
 				<div className={s.chatHeader}>
-					{props.state.dialogs[0].name}
+					{props.dialogsPage.dialogs[0].name}
 				</div>
 				<div className={s.messages}>
 					{ messagesElements }
