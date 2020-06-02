@@ -10,9 +10,7 @@ const MyPosts = (props) => {
 	return (
 		<div className={s.postsContainer}>
 			<NewPost newPostText={props.profilePage.newPostText} 
-					addPost={props.addPost}
-					updateNewPostText={props.updateNewPostText}
-			/>			
+					dispatch={props.dispatch}	/>			
 			<hr></hr>	
 			<div className={s.posts}>
 				{ postsElements }
