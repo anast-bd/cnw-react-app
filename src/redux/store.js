@@ -1,3 +1,9 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND-MESSAGE';
+
 let store = {
 	_state: {
 		profilePage: {
@@ -22,7 +28,8 @@ let store = {
 				{id: 3, message:"THE Queen. She's just an icon of style."},
 				{id: 4, message:'Yaaas, hail the Queen!'},
 				{id: 5, message:'God '} 
-			]
+			],
+			newMessageBody: '',
 		}
 	},
 	_callSubscriber() {
@@ -45,22 +52,47 @@ let store = {
 		};
 		this._state.profilePage.posts.unshift(newPost);
 		this._state.profilePage.newPostText = '';
-		this._callSubscriber(this._state);
+		this._callSubscriber(this._state); // observer pattern realization
 	},
 	_updateNewPostText(newText) {
 		this._state.profilePage.newPostText = newText;
 		this._callSubscriber(this._state);
 	},
-	dispatch(action) { // {type: 'ADD-POST'}
-		if (action.type === 'ADD-POST') {
+	_updateNewMessageBody(newMessageBody) {
+		this._state.dialogsPage.newMessageBody = newMessageBody;
+		this._callSubscriber(this._state);
+	},
+	_sendMessage() {
+		let body = this._state.dialogsPage.newMessageBody;
+		this._state.dialogsPage.newMessageBody = '';
+		this._state.dialogsPage.messages.push({id: 6, message: body});
+		this._callSubscriber(this._state);
+	},
+	dispatch(action) { // {type: ADD_POST}
+		if (action.type === ADD_POST) {
 			this._addPost();
-		}
-		if (action.type === 'UPDATE-NEW-POST-TEXT') {
+		} else
+		if (action.type === UPDATE_NEW_POST_TEXT) {
 			this._updateNewPostText(action.newText);
+		} else
+		if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+			this._updateNewMessageBody(action.body);
+		} else
+		if (action.type === SEND_MESSAGE) {
+			this._sendMessage();
 		}
 	}
 
 } 
+
+export const addPostActionCreator = () => ({type: ADD_POST}); // utility to help in action creation
+export const updateNewPostTextActionCreator = (text) => 
+	({ type: UPDATE_NEW_POST_TEXT, newText: text });
+
+export const sendMessageCreator = () => ({type: SEND_MESSAGE}); // utility to help in action creation
+export const updateNewMessageBodyCreator = (body) => 
+	({ type: UPDATE_NEW_MESSAGE_BODY, body: body });
+
 
 export default store;
 
