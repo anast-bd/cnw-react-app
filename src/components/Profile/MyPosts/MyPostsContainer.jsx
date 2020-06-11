@@ -8,4 +8,4 @@ const MyPostsContainer = (props) => {
 	return ( <MyPosts posts = {state.profilePage.posts} />)
 }
 
-export default MyPosts;
+export default MyPostsContainer;

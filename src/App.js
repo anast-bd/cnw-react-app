@@ -4,15 +4,14 @@ import './App.css';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Profile from './components/Profile/Profile';
-import Dialogs from './components/Dialogs/Dialogs';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 import Music from './components/Music/Music';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
 
 function App(props) {
 	
-	let DialogsComponent = () => <Dialogs dialogsPage={props.state.dialogsPage}
-										  dispatch={props.dispatch}/>;
+	let DialogsComponent = () => <DialogsContainer store = {props.store}/>;
 	let ProfileComponent ;
 	let MusicComponent = () => <Music />;
 	let NewsComponent = () => <News />;

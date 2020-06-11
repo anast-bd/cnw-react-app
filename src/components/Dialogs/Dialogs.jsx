@@ -1,9 +1,7 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-import {updateNewMessageBodyCreator, sendMessageCreator} from '../../redux/store';
 
 const Dialogs = (props) => {
 
@@ -12,12 +10,12 @@ const Dialogs = (props) => {
 	let newMessageBody = props.dialogsPage.newMessageBody;
 	
 	let onSendMessageClick = () => {
-		props.dispatch(sendMessageCreator());
+		props.sendMessage();
 	}
 	
-	let onNewMessageChange = (event) => {
-		let body = event.target.value;
-		props.dispatch(updateNewMessageBodyCreator(body));
+	let onNewMessageChange = (e) => {
+		let body = e.target.value;
+		props.updateNewMessageBody(body);
 	}
 	
 	
