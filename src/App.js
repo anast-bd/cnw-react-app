@@ -25,10 +25,7 @@ function App(props) {
 				<Sidebar />
 				<div class='app-wrapper-content'>
 					<Route path='/profile' 
-						render={ () => <Profile 
-							profilePage={props.state.profilePage}
-							dispatch={props.dispatch}
-						/> }
+						render={ () => <Profile store = {props.store} /> }
 					/>
 					<Route exact path='/dialogs' render={ DialogsComponent } />
 					<Route path='/music' component={ MusicComponent } />
