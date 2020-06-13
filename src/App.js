@@ -9,9 +9,9 @@ import Music from './components/Music/Music';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
 
-function App(props) {
+function App() {
 	
-	let DialogsComponent = () => <DialogsContainer store = {props.store}/>;
+	let DialogsComponent = () => <DialogsContainer/>;
 	let MusicComponent = () => <Music />;
 	let NewsComponent = () => <News />;
 	let SettingsComponent = () => <Settings />;
@@ -23,7 +23,7 @@ function App(props) {
 				<Sidebar />
 				<div class='app-wrapper-content'>
 					<Route path='/profile' 
-						render={ () => <Profile store = {props.store} /> }
+						render={ () => <Profile /> }
 					/>
 					<Route exact path='/dialogs' render={ DialogsComponent } />
 					<Route path='/music' component={ MusicComponent } />
