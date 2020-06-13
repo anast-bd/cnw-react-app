@@ -12,7 +12,6 @@ import Settings from './components/Settings/Settings';
 function App(props) {
 	
 	let DialogsComponent = () => <DialogsContainer store = {props.store}/>;
-	let ProfileComponent ;
 	let MusicComponent = () => <Music />;
 	let NewsComponent = () => <News />;
 	let SettingsComponent = () => <Settings />;
