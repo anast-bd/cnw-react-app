@@ -5,16 +5,12 @@ import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Profile from './components/Profile/Profile';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import Music from './components/Music/Music';
-import News from './components/News/News';
-import Settings from './components/Settings/Settings';
+import UsersContainer from './components/Users/UsersContainer';
 
 function App() {
 	
-	let DialogsComponent = () => <DialogsContainer/>;
-	let MusicComponent = () => <Music />;
-	let NewsComponent = () => <News />;
-	let SettingsComponent = () => <Settings />;
+	let DialogsComponent = () => <DialogsContainer />;
+	let UsersComponent = () => <UsersContainer />;
 	
 	return (
 		<BrowserRouter>
@@ -22,13 +18,10 @@ function App() {
 				<Header />
 				<Sidebar />
 				<div class='app-wrapper-content'>
-					<Route path='/profile' 
-						render={ () => <Profile /> }
-					/>
+					<Route path='/profile' render={ () => <Profile /> } />
 					<Route exact path='/dialogs' render={ DialogsComponent } />
-					<Route path='/music' component={ MusicComponent } />
-					<Route path='/news' component={ NewsComponent } />
-					<Route path='/settings' component={ SettingsComponent } />
+					<Route exact path='/users' render={ UsersComponent } />
+					
 				</div>
 			</div>
 		</BrowserRouter>

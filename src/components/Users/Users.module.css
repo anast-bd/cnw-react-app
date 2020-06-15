@@ -1,0 +1,38 @@
+.usersPage {
+	background-color: white;
+	border-radius: 5px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.userCard {
+	display: grid;
+	grid-template-columns: 6rem 1fr 6rem;
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.userCard img {
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.userCard button {
+	background-color: #05c490;
+	border: none;
+	color: white;
+	height: 3rem;
+	width: 6rem;
+
+	font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
