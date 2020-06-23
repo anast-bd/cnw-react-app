@@ -6,19 +6,17 @@ import userPhoto from '../../assets/images/default-user-img.png';
 
 class Users extends React.Component {
 
-	getUsers = () =>
-	{
-		if (this.props.users.length === 0) {
-			axios.get('https://social-network.samuraijs.com/api/1.0/users')
-				.then (response => {
-					this.props.setUsers(response.data.items);
-				})
-		}
+	constructor(props) {
+		super(props);
+		axios.get('https://social-network.samuraijs.com/api/1.0/users')
+		.then (response => {
+			this.props.setUsers(response.data.items);
+		})
+
 	}
 
 	render() {
 		return <div className={s.usersPage}>
-		<button onClick = {this.getUsers}>Get Users</button> 
 		{
 			this.props.users.map( u => <div className={s.userCard} key={u.id}>
 				<div className={s.userCardImage}>
