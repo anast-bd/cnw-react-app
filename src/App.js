@@ -17,7 +17,7 @@ function App() {
 			<div className='app-wrapper'>
 				<Header />
 				<Sidebar />
-				<div class='app-wrapper-content'>
+				<div className='app-wrapper-content'>
 					<Route path='/profile' render={ () => <Profile /> } />
 					<Route exact path='/dialogs' render={ DialogsComponent } />
 					<Route exact path='/users' render={ UsersComponent } />
